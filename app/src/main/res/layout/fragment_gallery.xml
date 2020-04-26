@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="갤러리버튼" />
+
     <TextView
         android:id="@+id/text_gallery"
         android:layout_width="match_parent"
