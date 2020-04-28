@@ -14,16 +14,21 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar"
+        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity android:name=".src.main.MainActivity">
+        </activity>
+        <activity android:name=".src.main.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signup.EmailSignupActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signup.SignCheckActivity"></activity>
+
     </application>
 
 </manifest>
