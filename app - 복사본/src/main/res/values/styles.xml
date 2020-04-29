@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Body2">
+        <item name="android:textSize">14.0sp</item>
+
+    </style>
+
+    <style name="Body2_styled" parent="@style/Body2">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Style.TextView.Setting" parent="@style/Body2_styled">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">55.0dip</item>
+        <item name="android:maxLines">1</item>
+          </style>
+
+    <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/blue20</item>
+    </style>
+
+</resources>
