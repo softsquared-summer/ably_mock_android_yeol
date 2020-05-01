@@ -35,36 +35,46 @@
                             android:orientation="horizontal">
 
                             <LinearLayout
-                                android:layout_width="314dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="20dp"
+                                android:layout_marginLeft="10dp"
                                 android:layout_weight="1"
                                 android:background="@color/white"
                                 android:orientation="horizontal">
 
                                 <TextView
                                     android:id="@+id/textView19"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="테스트"
+                                    android:fontFamily="@font/noto_sans_bold"
+                                    android:gravity="center_vertical"
                                     android:textColor="@color/black"
-                                    android:textSize="24sp" />
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="32dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="10dp"
+                                    app:srcCompat="@drawable/icon_bar_search" />
+
+                                <ImageButton
+                                    android:id="@+id/imageButton5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="32dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/white"
+                                    android:scaleType="fitCenter"
+                                    app:srcCompat="@drawable/icon_bar_cart" />
+
                             </LinearLayout>
 
-                            <ImageButton
-                                android:id="@+id/imageButton5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="32dp"
-                                android:layout_alignParentRight="true"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:scaleType="fitCenter"
-                                app:srcCompat="@drawable/icon_bar_cart" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -88,11 +98,11 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayout"
                 android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
                 app:tabIndicatorColor="@color/black"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="4dp"
-                app:tabTextAppearance="@style/tab_text"
-                android:layout_height="?attr/actionBarSize">
+                app:tabTextAppearance="@style/tab_text">
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/tab_today"

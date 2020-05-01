@@ -9,25 +9,29 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/border_round_edge_white"
+        app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:background="@drawable/border_round_edge_white"
+            android:orientation="vertical">
+
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/image_1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.8"
+                android:layout_weight="0.89"
                 android:scaleType="centerCrop"
-                app:riv_corner_radius_top_left="20dp"
-                app:riv_corner_radius_top_right="20dp"
                 android:src="@drawable/style_image1"
                 app:riv_border_color="#333333"
+                app:riv_corner_radius_top_left="15dp"
+                app:riv_corner_radius_top_right="15dp"
                 app:riv_mutate_background="true"
                 app:riv_oval="false" />
 
