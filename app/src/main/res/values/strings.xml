@@ -2,4 +2,6 @@
     <string name="app_name">Template</string>
     <string name="loading">로딩중입니다.</string>
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
+    <string name="email_check"><u>본문보기</u>.</string>
 </resources>
+

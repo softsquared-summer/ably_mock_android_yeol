@@ -11,46 +11,38 @@ import androidx.annotation.Nullable;
 
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.softsquared.template.R;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.TabPagerAdapter;
 
 public class HomeFragment extends Fragment {
     ViewGroup viewGroup;
-    private ViewPager mViewPager;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
 
-        mViewPager = (ViewPager) viewGroup.findViewById(R.id.container);
-        TabLayout tabLayout = viewGroup.findViewById(R.id.tablayout) ;
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                // TODO : tab의 상태가 선택 상태로 변경.
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                // TODO : tab의 상태가 선택되지 않음으로 변경.
-            }
+        // Initializing the TabLayout
+        tabLayout = viewGroup.findViewById(R.id.tablayout);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                // TODO : 이미 선택된 tab이 다시
-            }
-        });
-/*
-        final ViewPager viewPager = (ViewPager) viewGroup.findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        // Initializing ViewPager
+        viewPager =  viewGroup.findViewById(R.id.pager);
 
-        viewPager.setAdapter(adapter);
+        // Creating TabPagerAdapter adapter
+        TabPagerAdapter pagerAdapter = new TabPagerAdapter(getChildFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+        // Set TabSelectedListener
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
@@ -66,8 +58,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-*/
-
 
 
         return viewGroup;

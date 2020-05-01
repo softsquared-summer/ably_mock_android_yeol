@@ -26,8 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".src.main.bottomnavigation.mypage.signup.EmailSignupActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signup.SignupActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.mypage.signup.SignCheckActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signin.SigninActivity"></activity>
 
     </application>
 

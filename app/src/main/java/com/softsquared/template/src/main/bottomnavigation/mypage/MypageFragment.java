@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.softsquared.template.R;
-import com.softsquared.template.src.main.bottomnavigation.mypage.signup.EmailSignupActivity;
+import com.softsquared.template.src.main.bottomnavigation.mypage.signin.SigninActivity;
 import com.softsquared.template.src.main.bottomnavigation.mypage.signup.SignCheckActivity;
 
 public class MypageFragment extends Fragment {
@@ -22,12 +22,21 @@ public class MypageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragmnet_mypage, container, false);
 
-        Button signButton = viewGroup.findViewById(R.id.sign_quickButton);
+        Button signButton = viewGroup.findViewById(R.id.sign_button);
         signButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SignCheckActivity.class);
-                startActivity(intent);
+                Intent intentSingin = new Intent(getActivity(), SigninActivity.class);
+                startActivity(intentSingin);
+            }
+        });
+
+        Button signQuickButton = viewGroup.findViewById(R.id.sign_quickButton);
+        signQuickButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSignCehck = new Intent(getActivity(), SignCheckActivity.class);
+                startActivity(intentSignCehck);
             }
         });
 

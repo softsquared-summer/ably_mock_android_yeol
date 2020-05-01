@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.softsquared.template.R;
+import com.softsquared.template.src.ApplicationClass;
 import com.softsquared.template.src.main.bottomnavigation.home.HomeFragment;
 import com.softsquared.template.src.main.bottomnavigation.jjim.JjimFragment;
 import com.softsquared.template.src.main.bottomnavigation.market.MarketFragment;
@@ -38,8 +39,13 @@ public class HomeActivity extends AppCompatActivity {
         jjimFragment = new JjimFragment();
         mypageFragment = new MypageFragment();
 
-        //제일 처음 띄워줄 뷰를 세팅해줍니다. commit();까지 해줘야 합니다.
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, homeFragment).commitAllowingStateLoss();
+        //제일 처음 띄워줄 뷰를 세팅해줍니다. 로그인 유무확인
+        if(ApplicationClass.getLoginSuccess())
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, mypageFragment).commitAllowingStateLoss();
+        }else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, homeFragment).commitAllowingStateLoss();
+        }
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -3,7 +3,6 @@ package com.softsquared.template.src.main.bottomnavigation.mypage.signup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,14 +20,10 @@ public class SignCheckActivity extends AppCompatActivity {
         signButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), EmailSignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(intent);
             }
         });
-
-
-
-
     }
 
 }

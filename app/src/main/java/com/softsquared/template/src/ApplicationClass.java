@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -20,9 +21,7 @@ public class ApplicationClass extends Application {
     public static MediaType MEDIA_TYPE_JPEG = MediaType.parse("image/jpeg");
 
     // 테스트 서버 주소
-    public static String BASE_URL = "http://apis.newvement.com/";
-    // 실서버 주소
-//    public static String BASE_URL = "https://template.softsquared.com/";
+    public static String BASE_URL = "http://3.34.80.36/";
 
     public static SharedPreferences sSharedPreferences = null;
 
@@ -38,6 +37,16 @@ public class ApplicationClass extends Application {
     // Retrofit 인스턴스
     public static Retrofit retrofit;
 
+    public static boolean loginSuccess;
+
+    public static boolean getLoginSuccess() {
+        return loginSuccess;
+    }
+
+    public static void setLoginSuccess(boolean loginSuccess) {
+        ApplicationClass.loginSuccess = loginSuccess;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -48,11 +57,14 @@ public class ApplicationClass extends Application {
     }
 
     public static Retrofit getRetrofit() {
+
         if (retrofit == null) {
+
             OkHttpClient client = new OkHttpClient.Builder()
                     .readTimeout(5000, TimeUnit.MILLISECONDS)
                     .connectTimeout(5000, TimeUnit.MILLISECONDS)
                     .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
+                    .addInterceptor(httpLoggingInterceptor())
                     .build();
 
             retrofit = new Retrofit.Builder()
@@ -63,5 +75,17 @@ public class ApplicationClass extends Application {
         }
 
         return retrofit;
+    }
+
+    private static HttpLoggingInterceptor httpLoggingInterceptor(){
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                android.util.Log.e("MyGitHubData :", message + "");
+            }
+        });
+
+        return interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
     }
 }

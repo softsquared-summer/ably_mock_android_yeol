@@ -4,80 +4,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="314dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/textView19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="테스트"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageButton5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/icon_bar_cart" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:minHeight="100dp"
+                        app:title="Test Appbar">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+            android:layout_below="@id/appbar">
 
-            <LinearLayout
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"/>
+                app:tabIndicatorColor="@color/black"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="4dp"
+                app:tabTextAppearance="@style/tab_text"
+                android:layout_height="?attr/actionBarSize">
 
-            <androidx.appcompat.widget.Toolbar
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="투데이" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="NEW" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_best"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="BEST" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_hotdeal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="핫딜" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:minHeight="0dp"
-                app:title="Test Appbar">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tablayout">
 
-            </androidx.appcompat.widget.Toolbar>
-
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-        <com.google.android.material.tabs.TabLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:id="@+id/tablayout">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_today"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="tab_today" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_new"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="TAB-2" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_best"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="TAB-3" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab_hotdeal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="TAB-3" />
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </androidx.viewpager.widget.ViewPager>
-
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
+            </androidx.viewpager.widget.ViewPager>
+        </RelativeLayout>
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

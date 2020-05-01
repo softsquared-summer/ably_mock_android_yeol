@@ -6,12 +6,30 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="tab1"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="218dp"
+                android:layout_height="1060dp"
+                android:text="Button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="tab1"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
