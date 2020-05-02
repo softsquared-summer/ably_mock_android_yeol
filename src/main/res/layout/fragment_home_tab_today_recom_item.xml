@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_album_panel"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_thumb"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+
+            android:scaleType="centerCrop"
+            android:src="@drawable/style_image1"
+            app:riv_border_color="#333333"
+            app:riv_corner_radius_bottom_left="15dp"
+            app:riv_corner_radius_bottom_right="15dp"
+            app:riv_corner_radius_top_left="15dp"
+            app:riv_corner_radius_top_right="15dp"
+            app:riv_mutate_background="true"
+            app:riv_oval="false" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:paddingTop="5dp"
+
+        android:paddingBottom="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_discou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="10%"
+                android:textColor="@color/pink20" />
+
+            <TextView
+
+                android:id="@+id/txt_price"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10dp"
+
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="28,800"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+
+            android:id="@+id/txt_title1"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+
+            android:text="titl1"
+            android:textColor="@color/gray60"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/txt_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="@color/gray50" />
+
+        <TextView
+            android:id="@+id/txt_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="938개 구매중"
+            android:textColor="@color/gray50" />
+
+    </LinearLayout>
+
+</LinearLayout>
