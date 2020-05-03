@@ -1,4 +1,4 @@
-package com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recyclerview;
+package com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.recyclerview;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.softsquared.template.R;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendsmodels.datapojo.Result;
-
+import com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.tabnewmodels.datapojo.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,7 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
     // row layout을 화면에 뿌려주고 holder에 연결
     @Override
     public MainViewAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_tab_today_recom_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_tab_new_item, parent, false);
         MainViewAdapter.Holder holder = new MainViewAdapter.Holder(view);
         return holder;
     }
@@ -50,12 +49,8 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
         Glide.with(holder.itemView.getContext())
                 .load(list.get(position).getThumbnailUrl() + "#" + position + System.currentTimeMillis()) //Glide가 동일한 URL일 때, 캐싱한 것을 보여주기 때문에 각각 URL을 틀리게 하기 위해 position과 현재 시각을 추가함
                 .into(holder.imageView);
-
-        holder.discount.setText(list.get(itemposition).getDiscountRatio());
-        holder.price.setText(list.get(itemposition).getDisplayedPrice());
-        holder.descText1.setText(list.get(itemposition).getMarketName());
-        holder.descText2.setText(list.get(itemposition).getProductName());
-        holder.descText3.setText(list.get(itemposition).getPurchaseCnt());
+        holder.TitleText.setText(list.get(itemposition).getMarketName());
+        holder.descText.setText(list.get(itemposition).getProductName());
         Log.e("StudyApp", "onBindViewHolder" + itemposition);
     }
 
@@ -69,21 +64,17 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
     public class Holder extends RecyclerView.ViewHolder{
         public ImageView imageView;
         public ImageView imageView_heart;
-        public TextView discount;
-        public TextView price;
-        public TextView descText1;
+        public TextView TitleText;
+        public TextView descText;
         public TextView descText2;
-        public TextView descText3;
 
         public Holder(View view){
             super(view);
             imageView = (ImageView) view.findViewById(R.id.img_thumb);
             imageView_heart = view.findViewById(R.id.img_heart);
-            discount = (TextView) view.findViewById(R.id.txt_discou);
-            price = (TextView) view.findViewById(R.id.txt_price);
-            descText1 = (TextView) view.findViewById(R.id.txt_title1);
+            TitleText = (TextView) view.findViewById(R.id.txt_price);
+            descText = (TextView) view.findViewById(R.id.txt_title1);
             descText2 = (TextView) view.findViewById(R.id.txt_title2);
-            descText3 = (TextView) view.findViewById(R.id.txt_title3);
 
             imageView_heart.bringToFront();
         }

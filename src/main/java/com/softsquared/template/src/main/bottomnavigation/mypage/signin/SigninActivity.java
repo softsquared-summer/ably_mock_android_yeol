@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.softsquared.template.R;
 
@@ -30,7 +31,6 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
     private String userId;
     private String userPasswd;
 
-    private boolean intentLogincheck;
 
 
     @Override
@@ -62,14 +62,6 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
 
                 RequestSignin();
 
-                if(intentLogincheck){
-                    ApplicationClass.setLoginSuccess(true);
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
-                }
-                else{
-
-                }
             }
         });
 
@@ -104,14 +96,17 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
 
 
     @Override
-    public void validateSuccess(boolean loginCheck) {
+    public void validateSuccess(String userName) {
 
-        intentLogincheck = loginCheck;
-
+        ApplicationClass.setLoginSuccess(true);
+        ApplicationClass.setLoginUser(userName);
+        Toast.makeText(getApplicationContext(), userName+"님 안녕하세요!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
     }
 
     @Override
     public void validateFailure(String message) {
-
+        Toast.makeText(getApplicationContext(), "아이디 또는 비밀번호가 틀렸습니다.", Toast.LENGTH_LONG).show();
     }
 }

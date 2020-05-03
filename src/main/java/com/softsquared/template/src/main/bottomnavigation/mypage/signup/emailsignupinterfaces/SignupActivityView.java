@@ -2,6 +2,6 @@ package com.softsquared.template.src.main.bottomnavigation.mypage.signup.emailsi
 
 public interface SignupActivityView {
 
-    void validateSuccess(boolean signUpCheck);
+    void validateSuccess(String message);
     void validateFailure(String message);
 }

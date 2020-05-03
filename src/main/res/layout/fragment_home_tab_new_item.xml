@@ -105,7 +105,7 @@
 
             android:layout_marginTop="10dp"
 
-            android:text="titl1"
+            android:text="샤인바이미"
             android:textColor="@color/gray60"
             android:textSize="14dp" />
 
@@ -114,16 +114,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="TextView"
+            android:text="행운의 네잎클로버 아크릴 에어팟"
             android:textColor="@color/gray50" />
 
         <TextView
             android:id="@+id/txt_title3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="938개 구매중"
-            android:textColor="@color/gray50" />
+            android:background="@drawable/border_square_gray30_line"
+            android:padding="3dp"
+            android:text="NEW"
+            android:textColor="@color/gray80"
+            android:textSize="10sp" />
 
     </LinearLayout>
 

@@ -2,6 +2,6 @@ package com.softsquared.template.src.main.bottomnavigation.mypage.signin.signini
 
 public interface SigninActivityView {
 
-    void validateSuccess(boolean loginCheck);
+    void validateSuccess(String message);
     void validateFailure(String message);
 }

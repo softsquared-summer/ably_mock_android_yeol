@@ -93,8 +93,21 @@
                     android:layout_marginRight="15dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/border_round_gray50_bg_white_corner15"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="20dp">
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp">
+
+                    <ImageView
+                        android:id="@+id/mypage_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/icon_mypage_banner" />
 
                     <TextView
                         android:id="@+id/navheader_text"
@@ -102,6 +115,7 @@
                         android:layout_height="wrap_content"
 
                         android:layout_alignParentTop="true"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="30dp"
                         android:text="에이블리 회원이라면"
                         android:textColor="@color/black"
@@ -112,6 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/navheader_text"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="3dp"
                         android:fontFamily="@font/noto_sans_bold"
                         android:text="누구나 무료배송!"
@@ -123,6 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/navheader_text2"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/noto_sans_bold"
                         android:text="더 큰 혜택 보기 >"
@@ -133,10 +149,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/navheader_text3"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal"
                         android:paddingTop="15dp"
-                        android:paddingRight="15dp"
+                        android:paddingRight="30dp"
                         android:paddingBottom="30dp"
                         android:weightSum="1">
 
@@ -152,7 +169,7 @@
                             android:textStyle="bold" />
 
                         <View
-                            android:id="@+id/view"
+                            android:id="@+id/view_1"
                             android:layout_width="55dp"
                             android:layout_height="46dp"
                             android:layout_weight="0.1" />

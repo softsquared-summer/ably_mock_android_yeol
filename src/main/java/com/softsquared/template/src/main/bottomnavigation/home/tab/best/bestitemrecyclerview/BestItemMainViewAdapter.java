@@ -1,4 +1,4 @@
-package com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recyclerview;
+package com.softsquared.template.src.main.bottomnavigation.home.tab.best.bestitemrecyclerview;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,18 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.softsquared.template.R;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendsmodels.datapojo.Result;
-
+import com.softsquared.template.src.main.bottomnavigation.home.tab.best.bestitemmodels.datapojo.Result;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder> {
+public class BestItemMainViewAdapter extends RecyclerView.Adapter<BestItemMainViewAdapter.Holder> {
 
     private Context context;
     private List<Result> list = new ArrayList<>();
 
-    public MainViewAdapter(Context context, List<Result> list) {
+    public BestItemMainViewAdapter(Context context, ArrayList<Result> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,9 +30,9 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
     // ViewHolder 생성
     // row layout을 화면에 뿌려주고 holder에 연결
     @Override
-    public MainViewAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_tab_today_recom_item, parent, false);
-        MainViewAdapter.Holder holder = new MainViewAdapter.Holder(view);
+    public BestItemMainViewAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_tab_best_item, parent, false);
+        BestItemMainViewAdapter.Holder holder = new BestItemMainViewAdapter.Holder(view);
         return holder;
     }
 
@@ -42,7 +41,7 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
      *
      * */
     @Override
-    public void onBindViewHolder(MainViewAdapter.Holder holder, int position) {
+    public void onBindViewHolder(BestItemMainViewAdapter.Holder holder, int position) {
         // 각 위치에 문자열 세팅
         int itemposition = position;
       //  holder.imageView.setImageResource(list.get(itemposition).getThumbnailUrl());

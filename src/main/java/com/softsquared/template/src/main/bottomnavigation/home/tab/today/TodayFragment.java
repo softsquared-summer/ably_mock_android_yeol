@@ -18,7 +18,6 @@ import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recomme
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendsmodels.RecommendDefaultResponse;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendsmodels.datapojo.Result;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recyclerview.MainViewAdapter;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recyclerview.RecomRecyclerItem;
 
 
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home_tab_today, container, false);
-        recyclerView = (RecyclerView) viewGroup.findViewById(R.id.rv_recyclerview);
+        recyclerView = (RecyclerView) viewGroup.findViewById(R.id.recyclerview_item);
 
         RequestRecommend();
 
