@@ -30,7 +30,7 @@
         <activity android:name=".src.main.bottomnavigation.mypage.signup.SignupActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.mypage.signup.SignCheckActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.mypage.signin.SigninActivity"></activity>
-
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.ProductdetailActivity"></activity>
     </application>
 
 </manifest>

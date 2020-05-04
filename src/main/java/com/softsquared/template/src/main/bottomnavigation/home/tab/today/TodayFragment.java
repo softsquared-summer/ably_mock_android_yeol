@@ -57,7 +57,7 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
 
-        result.getResult().toString();
+
 
     }
 
