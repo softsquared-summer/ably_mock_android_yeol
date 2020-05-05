@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.softsquared.template.R;
 
@@ -30,7 +31,6 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
     private String userId;
     private String userPasswd;
 
-    private boolean intentLogincheck;
 
 
     @Override
@@ -42,7 +42,7 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
         Button buttonReuqestSign = findViewById(R.id.button_ReuqestSign);
         editTextEmail = findViewById(R.id.editText_email);
         editTextPassword = findViewById(R.id.editText_password);
-        textViewEmailError = findViewById(R.id.textView_emailerror);
+
 
 
         buttonSignup.setOnClickListener(new View.OnClickListener() {
@@ -62,30 +62,6 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
 
                 RequestSignin();
 
-                if(intentLogincheck){
-                    ApplicationClass.setLoginSuccess(true);
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
-                }
-                else{
-
-                }
-            }
-        });
-
-        editTextEmail.setOnFocusChangeListener(new View.OnFocusChangeListener(){
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus) {
-                    Pattern p = Pattern.compile("^[a-zA-X0-9]@[a-zA-Z0-9].[a-zA-Z0-9]");
-                    Matcher m = p.matcher(editTextEmail.getText());
-
-                    if (!m.matches()){
-                        textViewEmailError.setVisibility(View.GONE);
-                    }else{
-                        textViewEmailError.setVisibility(View.VISIBLE);
-                    }
-                }
             }
         });
 
@@ -104,10 +80,13 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
 
 
     @Override
-    public void validateSuccess(boolean loginCheck) {
+    public void validateSuccess(String userName) {
 
-        intentLogincheck = loginCheck;
-
+        ApplicationClass.setLoginSuccess(true);
+        ApplicationClass.setLoginUser(userName);
+        Toast.makeText(getApplicationContext(), userName+"님 안녕하세요!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
     }
 
     @Override

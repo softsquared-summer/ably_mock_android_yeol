@@ -37,6 +37,16 @@ public class ApplicationClass extends Application {
     // Retrofit 인스턴스
     public static Retrofit retrofit;
 
+    public static String getLoginUser() {
+        return loginUser;
+    }
+
+    public static void setLoginUser(String loginUser) {
+        ApplicationClass.loginUser = loginUser;
+    }
+
+    public static String loginUser;
+
     public static boolean loginSuccess;
 
     public static boolean getLoginSuccess() {

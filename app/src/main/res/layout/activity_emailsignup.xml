@@ -328,7 +328,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/border_round_gray30_bg_gray50_coner4"
+                android:background="@drawable/border_round_gray50_bg_gray50_coner10"
                 android:text="가입하기"
                 android:textColor="@color/black_20"
                 android:theme="@style/EditTheme" />

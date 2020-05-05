@@ -34,10 +34,10 @@ class SigninService {
                 }
                 Log.d("request",""+defaultResponse.getCode()+"성공했습니다.");
                 if(defaultResponse.getCode()==100){
-                    mMainActivityView.validateSuccess(true);
+                    mMainActivityView.validateSuccess(defaultResponse.getResult().getUserName());
                 }
                 else{
-                    mMainActivityView.validateSuccess(false);
+                    mMainActivityView.validateFailure(defaultResponse.getMessage());
                 }
 
             }

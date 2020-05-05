@@ -40,8 +40,9 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
         // 각 위치에 문자열 세팅
         int itemposition = position;
         holder.imageView.setImageResource(list.get(itemposition).getIcon());
-        holder.TitleText.setText(list.get(itemposition).getDesc());
-        holder.descText.setText(list.get(itemposition).getDesc2());
+        holder.TitleText.setText(list.get(itemposition).getTitle());
+        holder.descText.setText(list.get(itemposition).getDesc());
+        holder.descText2.setText(list.get(itemposition).getDesc2());
         Log.e("StudyApp", "onBindViewHolder" + itemposition);
     }
 
@@ -54,17 +55,20 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
     // ViewHolder는 하나의 View를 보존하는 역할을 한다
     public class Holder extends RecyclerView.ViewHolder{
         public ImageView imageView;
+        public ImageView imageView2;
         public TextView TitleText;
         public TextView descText;
         public TextView descText2;
 
         public Holder(View view){
             super(view);
-            imageView = (ImageView) view.findViewById(R.id.image_1);
-            TitleText = (TextView) view.findViewById(R.id.text_1);
-            descText = (TextView) view.findViewById(R.id.text_2);
-            descText2 = (TextView) view.findViewById(R.id.text_3);
+            imageView =  view.findViewById(R.id.image_1);
+            imageView2 =  view.findViewById(R.id.image_2);
+            TitleText =  view.findViewById(R.id.text_1);
+            descText =  view.findViewById(R.id.text_2);
+            descText2 = view.findViewById(R.id.text_3);
 
+            imageView2.bringToFront();
         }
     }
 }

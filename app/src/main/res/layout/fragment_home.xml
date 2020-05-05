@@ -40,38 +40,51 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_weight="1"
                                 android:background="@color/white"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:weightSum="1">
 
-                                <TextView
-                                    android:id="@+id/textView19"
-                                    android:layout_width="wrap_content"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/noto_sans_bold"
-                                    android:gravity="center_vertical"
-                                    android:textColor="@color/black"
-                                    android:textSize="20sp" />
+                                    android:layout_margin="8dp"
+                                    android:layout_weight="0.15"
+                                    android:background="@drawable/border_round_gray40_bg_gray40_coner_search"
+                                    android:gravity="center_vertical">
 
-                                <ImageView
-                                    android:id="@+id/imageView7"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="32dp"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginRight="10dp"
-                                    app:srcCompat="@drawable/icon_bar_search" />
+                                    <ImageView
+                                        android:id="@+id/imageView8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        app:srcCompat="@drawable/icon_search" />
 
-                                <ImageButton
-                                    android:id="@+id/imageButton5"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="32dp"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:background="@color/white"
-                                    android:scaleType="fitCenter"
-                                    app:srcCompat="@drawable/icon_bar_cart" />
+                                    <TextView
+                                        android:id="@+id/textView26"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="7dp"
+                                        android:layout_weight="1"
+                                        android:text="상품이나 마켓을 검색해보세요!"
+                                        android:textColor="@color/gray60" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.85">
+
+                                    <ImageButton
+                                        android:id="@+id/imageButton5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="@color/white"
+                                        android:scaleType="fitCenter"
+                                        app:srcCompat="@drawable/icon_bar_cart" />
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -99,6 +112,7 @@
                 android:id="@+id/tablayout"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
                 app:tabIndicatorColor="@color/black"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="4dp"
@@ -108,7 +122,8 @@
                     android:id="@+id/tab_today"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="투데이" />
+                    android:text="투데이"
+                    android:textSize="30sp"/>
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/tab_new"

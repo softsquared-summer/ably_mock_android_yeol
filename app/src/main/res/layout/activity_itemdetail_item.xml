@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_thum"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/banner_image1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/image_review"
+                android:layout_width="match_parent"
+                android:layout_height="221dp"
+                android:layout_below="@id/text_code"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/icon_review" />
+
+            <TextView
+                android:id="@+id/text_productname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[봄에 찰떡 컬러감] 클린 슬림핏 데님"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_productname"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="29,800원"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_price"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_round4_blue30_bg_white"
+                android:text="4,000원 할인 쿠폰 받기"
+                android:textColor="@color/blue30" />
+
+            <TextView
+                android:id="@+id/text_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_coupon"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="상품코드 160-20460-117" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

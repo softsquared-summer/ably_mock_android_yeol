@@ -2,6 +2,7 @@ package com.softsquared.template.src.main.bottomnavigation.mypage.signup;
 
 
 import android.util.Log;
+import android.widget.Toast;
 
 
 import com.softsquared.template.src.main.bottomnavigation.mypage.signup.emailsignupinterfaces.SignupActivityView;
@@ -36,8 +37,11 @@ class SignupService {
                 Log.d("request",""+defaultResponse.getCode()+"성공했습니다.");
 
                 if(defaultResponse.getCode()==100){
-                    mMainActivityView.validateSuccess(true);
+                    mMainActivityView.validateSuccess(defaultResponse.getResult());
+                }else{
+                    mMainActivityView.validateFailure(defaultResponse.getMessage());
                 }
+
             }
 
             @Override

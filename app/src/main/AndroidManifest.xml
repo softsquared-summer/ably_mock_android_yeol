@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:largeHeap="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity android:name=".src.main.MainActivity">
@@ -29,6 +30,8 @@
         <activity android:name=".src.main.bottomnavigation.mypage.signup.SignupActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.mypage.signup.SignCheckActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.mypage.signin.SigninActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.ProductdetailActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.buydialog.order.OrderActivity"></activity>
 
     </application>
 

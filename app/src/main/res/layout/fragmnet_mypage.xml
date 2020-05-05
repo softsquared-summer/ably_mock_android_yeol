@@ -21,8 +21,10 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:orientation="horizontal">
@@ -41,19 +43,19 @@
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="27dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="3dp"
                     app:srcCompat="@drawable/icon_bar_search" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="27dp"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="10dp"
                     android:background="@color/white"
                     android:scaleType="fitCenter"
@@ -92,9 +94,23 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginBottom="20dp"
-                    android:background="@drawable/border_round_gray50_bg_white_corner15"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="20dp">
+                    android:background="@drawable/border_round_white_corner15"
+                    android:elevation="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp">
+
+                    <ImageView
+                        android:id="@+id/mypage_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/icon_mypage_banner" />
 
                     <TextView
                         android:id="@+id/navheader_text"
@@ -102,6 +118,7 @@
                         android:layout_height="wrap_content"
 
                         android:layout_alignParentTop="true"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="30dp"
                         android:text="에이블리 회원이라면"
                         android:textColor="@color/black"
@@ -112,6 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/navheader_text"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="3dp"
                         android:fontFamily="@font/noto_sans_bold"
                         android:text="누구나 무료배송!"
@@ -123,20 +141,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/navheader_text2"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/noto_sans_bold"
                         android:text="더 큰 혜택 보기 >"
-                        android:textColor="@color/blue40"
+                        android:textColor="@color/blue30"
                         android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/navheader_text3"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal"
                         android:paddingTop="15dp"
-                        android:paddingRight="15dp"
+                        android:paddingRight="30dp"
                         android:paddingBottom="30dp"
                         android:weightSum="1">
 
@@ -145,14 +165,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.45"
-                            android:background="@drawable/border_round_gray50_bg_white_coner4"
+                            android:background="@drawable/border_round_gray10_bg_white_coner4"
                             android:text="로그인"
                             android:textColor="@color/black"
                             android:textSize="16sp"
+                            android:stateListAnimator="@null"
                             android:textStyle="bold" />
 
                         <View
-                            android:id="@+id/view"
+                            android:id="@+id/view_1"
                             android:layout_width="55dp"
                             android:layout_height="46dp"
                             android:layout_weight="0.1" />
@@ -162,8 +183,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.45"
-                            android:background="@drawable/border_round_gray50_bg_white_coner4"
+                            android:background="@drawable/border_round_gray10_bg_white_coner4"
                             android:text="5초 회원가입"
+                            android:stateListAnimator="@null"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -348,11 +370,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="20dp"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="15dp"
-                        android:text="버전 정보 2.17.1"
+                        android:paddingTop="19dp"
+                        android:paddingBottom="19dp"
+                        android:text="버전 정보"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        style="@style/Style.TextView.Setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="19dp"
+                        android:paddingBottom="19dp"
+                        android:text="2.17.1"
+                        android:textColor="@color/black_40"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView9"
@@ -362,9 +397,9 @@
                         android:layout_weight="1"
                         android:gravity="right|center_vertical"
                         android:paddingLeft="20dp"
-                        android:paddingTop="15dp"
+                        android:paddingTop="19dp"
                         android:paddingRight="10dp"
-                        android:paddingBottom="15dp"
+                        android:paddingBottom="19dp"
                         android:text="최신버전입니다."
                         android:textSize="14sp" />
                 </LinearLayout>

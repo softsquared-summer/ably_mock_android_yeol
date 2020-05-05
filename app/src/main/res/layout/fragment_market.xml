@@ -34,7 +34,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/noto_sans_bold"
                     android:gravity="center_vertical"
-                    android:text="스타일"
+                    android:text="5월 2주차 랭킹"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -70,9 +70,23 @@
         android:layout_height="3dp"
         android:background="@drawable/drop_shadow" />
 
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="전체 랭킹"
+        android:textColor="@color/black" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -81,7 +95,7 @@
             android:scrollbars="vertical">
 
         </androidx.recyclerview.widget.RecyclerView>
-
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </RelativeLayout>
 

@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.softsquared.template.R;
 
+import com.softsquared.template.src.ApplicationClass;
 import com.softsquared.template.src.main.bottomnavigation.mypage.signin.SigninActivity;
 import com.softsquared.template.src.main.bottomnavigation.mypage.signup.emailsignupinterfaces.SignupActivityView;
 import com.softsquared.template.src.main.bottomnavigation.mypage.signup.emailsignupmodels.SignupRequest;
@@ -68,7 +70,7 @@ public class SignupActivity extends AppCompatActivity implements SignupActivityV
                }
 
                 RequestSignup();
-/*
+                /*
                 if(intentSingupcheck){
                     Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
                     startActivity(intent);
@@ -84,14 +86,17 @@ public class SignupActivity extends AppCompatActivity implements SignupActivityV
     private void RequestSignup() {
 
         final SignupService signupService = new SignupService( this);
-        SignupRequest RequestUserData = new SignupRequest("NORMAL",email,"12345678","jinyeol","01012341234","19990101","Y","Y");
+        SignupRequest RequestUserData = new SignupRequest("NORMAL",email,"12345678","jinyeol",phone,"19990101","Y","Y");
         //SignupRequest RequestUserData = new SignupRequest("NORMAL",email,password,name,phone,AgreeOnService,AgreeOnPrivate);
         signupService.GetSignUp(RequestUserData);
 
     }
 
     @Override
-    public void validateSuccess(boolean signUpCheck) {
+    public void validateSuccess(String message) {
+
+
+        Toast.makeText(getApplicationContext(), "회원가입이 성공했습니다.", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
         startActivity(intent);
 
@@ -99,6 +104,8 @@ public class SignupActivity extends AppCompatActivity implements SignupActivityV
 
     @Override
     public void validateFailure(String message) {
+
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
 
     }
 }
