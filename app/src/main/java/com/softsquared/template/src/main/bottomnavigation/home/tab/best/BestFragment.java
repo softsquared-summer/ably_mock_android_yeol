@@ -37,6 +37,7 @@ public class BestFragment extends Fragment implements BestItemActivityView{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home_tab_best, container, false);
         recyclerViewCategory = viewGroup.findViewById(R.id.RecyclerView_category);
+        recyclerViewItem =  viewGroup.findViewById(R.id.recyclerview_item);
 
         categoryList.add(new CategoryItem("비치웨어"));
         categoryList.add(new CategoryItem("언더웨어"));
@@ -57,16 +58,7 @@ public class BestFragment extends Fragment implements BestItemActivityView{
         //recyclerViewCategory.setNestedScrollingEnabled(false);
         recyclerViewCategory.setAdapter(categoryAdapter);
 
-
-
-        // 상품 Recyclerview
-        recyclerViewItem =  viewGroup.findViewById(R.id.recyclerview_item);
-
-
         RequestBestItem();
-
-
-
 
         return viewGroup;
     }
@@ -82,7 +74,8 @@ public class BestFragment extends Fragment implements BestItemActivityView{
     public void validateSuccess(BestItemDefaultResponse result) {
 
         int size = result.getResult().length;
-        for(int i=0;i<size;i++) {
+
+        for(int i=0;i<size;i++){
             bestItemList.add(result.getResult(i));
         }
 
@@ -91,8 +84,6 @@ public class BestFragment extends Fragment implements BestItemActivityView{
         recyclerViewItem.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerViewItem.setNestedScrollingEnabled(false);
         recyclerViewItem.setAdapter(bestItemAdapter);
-
-        result.getResult().toString();
 
     }
 

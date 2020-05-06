@@ -18,27 +18,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.softsquared.template.R;
 import com.softsquared.template.src.BaseActivity;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.buydialog.BuyDialog;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.buydialog.order.OrderActivity;
+
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.optionmodels.OptionDefaultResponse;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.optionsniperinterfaces.OptionActivityView;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.order.OrderActivity;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailinterfaces.ProductdetailActivityView;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailmodels.ProductdetailDefaultResponse;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailmodels.datapojo.Result;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.recyclerview.MainViewAdapter;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailmodels.datapojo.ProductDetailResult;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productrecyclerview.MainViewAdapter;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.optionmodels.datapojo.OptionResult;
 
 import java.util.ArrayList;
 
-public class ProductdetailActivity extends BaseActivity implements ProductdetailActivityView{
+public class ProductdetailActivity extends BaseActivity implements ProductdetailActivityView,OptionActivityView{
 
     private TextView productprice;
     private Context mContext;
     private MainViewAdapter adapter;
     private String productNum;
     private RecyclerView recyclerView;
-    private ArrayList<Result> list = new ArrayList<>();
+    private ArrayList<ProductDetailResult> list = new ArrayList<>();
+    private ArrayList<OptionResult> listOption = new ArrayList<>();
     private Button buttonBuy;
-    private BuyDialog buyDialog;
     private Spinner option_Spiner1;
-    private Dialog dialog;
     private Button dialogbutton;
 
     @Override
@@ -50,20 +52,6 @@ public class ProductdetailActivity extends BaseActivity implements Productdetail
         recyclerView = findViewById(R.id.recyclerview_itemdetail);
         buttonBuy = findViewById(R.id.button_buy);
 
-        option_Spiner1 = findViewById(R.id.option_spiner1);
-
-/*
-        option_Spiner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
-        });
-*/
-
 
         Intent productIntent = getIntent();
         productNum = productIntent.getStringExtra("productNum");
@@ -71,17 +59,24 @@ public class ProductdetailActivity extends BaseActivity implements Productdetail
 
         GetItemDetail();
 
-
         buttonBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
+                // 옵션 정보 조회
+                GetOptionInfor();
+
+
+                // 다이얼로그 출력
                 Dialog dialog = new Dialog(mContext, R.style.DialogTheme);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.activity_itemdetail_buydialog);
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
                 dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
+
+                // 1-1 다이얼로그 구매버튼 클릭
                 Button btn = dialog.findViewById(R.id.dialogbutton_buy);
                 btn.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -90,6 +85,8 @@ public class ProductdetailActivity extends BaseActivity implements Productdetail
                         mContext.startActivity(intent);
                     }
                 });
+
+                // 1-2 다이얼로그 장바구니버튼 클릭
 
 
                 dialog.show();
@@ -102,7 +99,6 @@ public class ProductdetailActivity extends BaseActivity implements Productdetail
     @Override
     public void validateSuccess(ProductdetailDefaultResponse result) {
 
-
         list.add(result.getResult());
 
         recyclerView.setHasFixedSize(true);
@@ -110,6 +106,13 @@ public class ProductdetailActivity extends BaseActivity implements Productdetail
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void validateSuccess(OptionDefaultResponse result) {
+
+       //
 
 
     }
@@ -125,6 +128,11 @@ public class ProductdetailActivity extends BaseActivity implements Productdetail
         signupService.GetItemDetail(productNum);
 
     }
+    private void GetOptionInfor() {
 
+        final OptionService signupService = new OptionService((OptionActivityView) this);
+        signupService.GetOptionInfor(productNum);
+
+    }
 
 }

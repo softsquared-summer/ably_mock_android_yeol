@@ -9,8 +9,8 @@
         android:name=".src.ApplicationClass"
         android:allowBackup="false"
         android:fullBackupContent="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/icon_ably"
+        android:label="AblyCopy"
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -18,20 +18,20 @@
         android:largeHeap="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.main.MainActivity">
-        </activity>
-        <activity android:name=".src.main.HomeActivity">
+        <activity android:name=".src.main.HomeActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signup.SignupActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signup.SignCheckActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.mypage.signin.SigninActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.ProductdetailActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.order.OrderActivity"></activity>
+        <activity android:name=".src.main.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".src.main.bottomnavigation.mypage.signup.SignupActivity"></activity>
-        <activity android:name=".src.main.bottomnavigation.mypage.signup.SignCheckActivity"></activity>
-        <activity android:name=".src.main.bottomnavigation.mypage.signin.SigninActivity"></activity>
-        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.ProductdetailActivity"></activity>
-        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.buydialog.order.OrderActivity"></activity>
+
 
     </application>
 

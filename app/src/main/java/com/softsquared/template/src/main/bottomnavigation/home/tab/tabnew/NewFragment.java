@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.softsquared.template.R;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.recyclerview.MainViewAdapter;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.tabrecyclerview.MainViewAdapter;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.tabnewinterfaces.tabnewActivityView;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.tabnewmodels.datapojo.Result;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.tabnew.tabnewmodels.tabnewDefaultResponse;
@@ -38,16 +38,11 @@ public class NewFragment extends Fragment implements tabnewActivityView {
         return viewGroup;
     }
 
-
-
-
-
      private void RequestNewProduct() {
         final tabnewService tabnewService= new tabnewService(this);
          tabnewService.GetRecommend();
 
     }
-
 
     @Override
     public void validateSuccess(tabnewDefaultResponse result) {
@@ -63,10 +58,7 @@ public class NewFragment extends Fragment implements tabnewActivityView {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
 
-        result.getResult().toString();
-
     }
-
 
     @Override
     public void validateFailure(String message) {

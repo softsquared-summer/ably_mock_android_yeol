@@ -55,10 +55,6 @@ public class JjimFragment extends Fragment {
             }
         });
 
-
-
-
-
         return viewGroup;
     }
 }

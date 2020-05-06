@@ -32,13 +32,10 @@ public class MarketFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_market, container, false);
 
-
-
         recyclerView = viewGroup.findViewById(R.id.recyclerView);
         swipeToRefresh = viewGroup.findViewById(R.id.swipeToRefresh);
 
         list = new ArrayList<MarketRecycleItem>();
-
         list.add(new MarketRecycleItem(R.drawable.product1, R.drawable.product2,R.drawable.product3,"1","크림치즈마켓","#10대#20대","심플베이직","오늘의 신상 2개"));
         list.add(new MarketRecycleItem(R.drawable.product1, R.drawable.product2,R.drawable.product3,"2","크림치즈마켓","#10대#20대","심플베이직","오늘의 신상 2개"));
         list.add(new MarketRecycleItem(R.drawable.product1, R.drawable.product2,R.drawable.product3,"3","크림치즈마켓","#10대#20대","심플베이직","오늘의 신상 2개"));

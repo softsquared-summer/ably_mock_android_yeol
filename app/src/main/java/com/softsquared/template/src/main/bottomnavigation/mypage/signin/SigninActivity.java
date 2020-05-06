@@ -44,7 +44,6 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
         editTextPassword = findViewById(R.id.editText_password);
 
 
-
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,9 +63,6 @@ public class SigninActivity extends BaseActivity implements SigninActivityView{
 
             }
         });
-
-        RequestSignin();
-
     }
 
 

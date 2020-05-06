@@ -26,16 +26,16 @@
                     android:layout_height="match_parent"
                     android:layout_below="@id/main_layout"
                     android:layout_gravity="bottom"
-                    android:layout_margin="10dp"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_weight="6"
+                    android:layout_weight="7"
                     android:orientation="horizontal"
                     android:weightSum="1">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_margin="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="0.1"
@@ -46,9 +46,9 @@
                             android:id="@+id/imageView4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.3"
+                            android:layout_weight="0.4"
                             android:foregroundGravity="center_vertical"
-                            app:srcCompat="@drawable/icon_zzim_active" />
+                            app:srcCompat="@drawable/icon_zzim_detail" />
 
                         <TextView
                             android:id="@+id/textView36"
@@ -58,7 +58,7 @@
                             android:foregroundGravity="center_vertical"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="4.1만"
-                            android:textColor="@color/pink30" />
+                            android:textColor="@color/pink20" />
 
                     </LinearLayout>
 
@@ -66,8 +66,9 @@
                         android:id="@+id/button_buy"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_margin="10dp"
                         android:layout_weight="0.9"
-                        android:background="@drawable/border_round_black_radisu10"
+                        android:background="@drawable/border_round_black_50_radisu5"
                         android:fontFamily="@font/noto_sans_bold"
                         android:text="구매하기"
                         android:textColor="@color/white"

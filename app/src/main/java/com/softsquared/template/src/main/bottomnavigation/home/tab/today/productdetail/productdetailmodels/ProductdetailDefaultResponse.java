@@ -1,12 +1,12 @@
 package com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailmodels;
 
 import com.google.gson.annotations.SerializedName;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailmodels.datapojo.Result;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.productdetail.productdetailmodels.datapojo.ProductDetailResult;
 
 public class ProductdetailDefaultResponse {
 
     @SerializedName("result")
-    private Result result;
+    private ProductDetailResult result;
     @SerializedName("code")
     private int code;
     @SerializedName("message")
@@ -14,11 +14,11 @@ public class ProductdetailDefaultResponse {
     @SerializedName("isSuccess")
     private String isSuccess;
 
-    public Result getResult() {
+    public ProductDetailResult getResult() {
         return result;
     }
 
-    public void setResult(Result result) {
+    public void setResult(ProductDetailResult result) {
         this.result = result;
     }
 

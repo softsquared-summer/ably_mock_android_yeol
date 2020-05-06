@@ -17,7 +17,7 @@ import com.softsquared.template.R;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendinterfaces.RecommendActivityView;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendsmodels.RecommendDefaultResponse;
 import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendsmodels.datapojo.Result;
-import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recyclerview.MainViewAdapter;
+import com.softsquared.template.src.main.bottomnavigation.home.tab.today.recommend.recommendrecyclerview.MainViewAdapter;
 
 
 import java.util.ArrayList;
@@ -39,13 +39,13 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
 
         RequestRecommend();
 
-
         return viewGroup;
     }
 
     @Override
     public void validateSuccess(RecommendDefaultResponse result) {
 
+        // 데이터 입력
         int size = result.getResult().length;
         for(int i=0;i<size;i++) {
             list.add(result.getResult(i));
@@ -56,8 +56,6 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
-
-
 
     }
 

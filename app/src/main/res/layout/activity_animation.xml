@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/Text_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/noto_sans_bold"
+            android:text="A B L Y"
+            android:textColor="@color/black"
+            android:textSize="70sp" />
+
+        <TextView
+            android:id="@+id/Text_down1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Text_top"
+            android:layout_centerInParent="false"
+            android:layout_marginLeft="80dp"
+            android:text="셀럽마켓 전 상품"
+            android:textColor="@color/gray60"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Text_down2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/Text_down1"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/Text_down1"
+            android:fontFamily="@font/noto_sans_bold"
+            android:text="무료배송"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</LinearLayout>

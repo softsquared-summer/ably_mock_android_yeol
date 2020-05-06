@@ -34,8 +34,8 @@ public class StyleFragment extends Fragment {
 
             recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
             swipeToRefresh = rootView.findViewById(R.id.swipeToRefresh);
-            ArrayList<StyleRecyclerItem> list = new ArrayList<StyleRecyclerItem>();
 
+            ArrayList<StyleRecyclerItem> list = new ArrayList<StyleRecyclerItem>();
             list.add(new StyleRecyclerItem(R.drawable.style_image1, "승아네 seungahne","실패할 수 없는 색조합 코디꿀팁","연남동 나들이룩에 찰-떡"));
             list.add(new StyleRecyclerItem(R.drawable.style_image2, "혜성 MoonBrand","오늘 같은 날씨에 딱 어울리는 러블리","하이틴룩"));
             list.add(new StyleRecyclerItem(R.drawable.style_image3, "THIS IS MATE 디씨즈마테","마테에게 간택당한 옷들을 소개한다.","#당진시에게 #LA입는법"));

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,18 +28,21 @@ public class MypageFragment extends Fragment {
     private TextView navheadtext;
     private TextView navheadtext2;
     private TextView navheadtext3;
+    private RelativeLayout okRelativeLayout;
+    private RelativeLayout noRelativeLayout;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragmnet_mypage, container, false);
 
-         signButton = viewGroup.findViewById(R.id.sign_button);
-        mypageInfor =  viewGroup.findViewById(R.id.mypage_information);
+        signButton = viewGroup.findViewById(R.id.ok_sign_button);
+        signQuickButton = viewGroup.findViewById(R.id.ok_sign_quickButton);
         navheadtext =  viewGroup.findViewById(R.id.navheader_text);
         navheadtext2 =  viewGroup.findViewById(R.id.navheader_text2);
         navheadtext3 =  viewGroup.findViewById(R.id.navheader_text3);
-
+        okRelativeLayout = viewGroup.findViewById(R.id.RelativeLayout_loginok);
+        noRelativeLayout = viewGroup.findViewById(R.id.RelativeLayout_loginno);
 
 
         signButton.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +53,6 @@ public class MypageFragment extends Fragment {
             }
         });
 
-        signQuickButton = viewGroup.findViewById(R.id.sign_quickButton);
         signQuickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,15 +70,11 @@ public class MypageFragment extends Fragment {
         super.onResume();
 
         if (applicationClass.loginSuccess){
-            mypageInfor.setVisibility(viewGroup.VISIBLE);
-            navheadtext.setVisibility(viewGroup.GONE);
-            navheadtext2.setVisibility(viewGroup.GONE);
-            navheadtext3.setVisibility(viewGroup.GONE);
+            noRelativeLayout.setVisibility(viewGroup.GONE);
+            okRelativeLayout.setVisibility(viewGroup.VISIBLE);
 
-            signButton.setVisibility(viewGroup.GONE);
-            signQuickButton.setVisibility(viewGroup.GONE);
         }else{
-            mypageInfor.setVisibility(viewGroup.GONE);
+
         }
 
     }

@@ -24,71 +24,76 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <View
-                            android:id="@+id/view8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="55dp" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="10dp"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:orientation="horizontal"
-                                android:weightSum="1">
+                                android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_margin="8dp"
-                                    android:layout_weight="0.15"
-                                    android:background="@drawable/border_round_gray40_bg_gray40_coner_search"
-                                    android:gravity="center_vertical">
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal">
 
-                                    <ImageView
-                                        android:id="@+id/imageView8"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        app:srcCompat="@drawable/icon_search" />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginRight="8dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_weight="0.15"
+                                        android:background="@drawable/border_round_gray40_bg_gray40_coner_search"
+                                        android:gravity="center_vertical">
 
-                                    <TextView
-                                        android:id="@+id/textView26"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="7dp"
-                                        android:layout_weight="1"
-                                        android:text="상품이나 마켓을 검색해보세요!"
-                                        android:textColor="@color/gray60" />
-                                </LinearLayout>
+                                        <ImageView
+                                            android:id="@+id/imageView8"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            app:srcCompat="@drawable/icon_search" />
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="0.85">
+                                        <TextView
+                                            android:id="@+id/textView26"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="7dp"
+                                            android:layout_weight="1"
+                                            android:text="상품이나 마켓을 검색해보세요!"
+                                            android:textColor="@color/gray60" />
+                                    </LinearLayout>
 
                                     <ImageButton
                                         android:id="@+id/imageButton5"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="32dp"
+                                        android:layout_height="27dp"
                                         android:layout_alignParentRight="true"
                                         android:layout_gravity="center_vertical"
                                         android:layout_marginTop="10dp"
+                                        android:layout_marginRight="5dp"
                                         android:layout_marginBottom="10dp"
                                         android:background="@color/white"
                                         android:scaleType="fitCenter"
                                         app:srcCompat="@drawable/icon_bar_cart" />
+
                                 </LinearLayout>
 
                             </LinearLayout>
-
                         </LinearLayout>
+
+                        <View
+                            android:id="@+id/view8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp" />
 
                     </RelativeLayout>
 
