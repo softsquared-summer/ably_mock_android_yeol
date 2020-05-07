@@ -1,9 +1,11 @@
 package com.softsquared.template.src.main.bottomnavigation.home.tab.today;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +32,12 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private ArrayList<Result> list = new ArrayList<>();
+    private ArrayList<Result> listcopy = new ArrayList<>();
+    private int currentPage = 1;
+    private int previousTotal = 0;
+    private int totPageCount = 0;
+    private boolean loading = true;
+    private int pagingcount = 10;
 
     @Nullable
     @Override
@@ -38,6 +46,12 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
         recyclerView = (RecyclerView) viewGroup.findViewById(R.id.recyclerview_item);
 
         RequestRecommend();
+
+
+
+
+
+
 
         return viewGroup;
     }
@@ -50,6 +64,14 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
         for(int i=0;i<size;i++) {
             list.add(result.getResult(i));
         }
+
+        for(int i=0;i<size;i++) {
+            Log.d("StudyApp", "onBindViewHolder" +   list.get(i).toString());
+
+        }
+
+
+
 
         recyclerView.setHasFixedSize(true);
         adapter = new MainViewAdapter(getActivity(), list);
@@ -70,5 +92,21 @@ public class TodayFragment extends Fragment implements RecommendActivityView {
         recommendService.GetRecommend();
 
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    public void addItem(int initaillize){
+
+        int size=10;
+
+        for(int i=0;i<10;i++) {
+            listcopy.add(list.get(initaillize+i));
+        }
+    }
+
 }
 

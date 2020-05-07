@@ -4,6 +4,6 @@ import com.softsquared.template.src.main.bottomnavigation.home.tab.today.product
 
 public interface OptionActivityView {
 
-    void validateSuccess(OptionDefaultResponse result);
-    void validateFailure(String message);
+    void validateSuccessOptionInformation(OptionDefaultResponse result);
+    void validateFailureOptionInformation(String message);
 }

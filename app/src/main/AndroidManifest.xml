@@ -24,6 +24,8 @@
         <activity android:name=".src.main.bottomnavigation.mypage.signin.SigninActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.ProductdetailActivity"></activity>
         <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.order.OrderActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.order.account.AccountActivity"></activity>
+        <activity android:name=".src.main.bottomnavigation.home.tab.today.productdetail.order.adress.AddressActivity"></activity>
         <activity android:name=".src.main.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

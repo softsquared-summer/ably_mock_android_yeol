@@ -62,13 +62,16 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
                 .into(holder.imageView);
 
 
-        holder.discount.setText(list.get(itemposition).getDiscountRatio());
+        if(list.get(itemposition).getDiscountRatio().equals("0%")){ holder.discount.setVisibility(View.GONE); }
+        else{ holder.discount.setText(list.get(itemposition).getDiscountRatio()); }
         holder.price.setText(list.get(itemposition).getDisplayedPrice());
         holder.descText1.setText(list.get(itemposition).getMarketName());
         holder.descText2.setText(list.get(itemposition).getProductName());
-        holder.descText3.setText(list.get(itemposition).getPurchaseCnt());
+        if(list.get(itemposition).getPurchaseCnt().equals("0")){ holder.descText3.setVisibility(View.GONE); }
+        else{ holder.descText3.setText(list.get(itemposition).getPurchaseCnt()); }
         Log.d("StudyApp", "onBindViewHolder" + itemposition);
 
+        holder.itemView.setTag(itemposition);
 
     }
 
@@ -90,13 +93,13 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder
 
         public Holder(View view){
             super(view);
-            imageView = (ImageView) view.findViewById(R.id.img_thumb);
+            imageView =  view.findViewById(R.id.img_thumb);
             imageView_heart = view.findViewById(R.id.img_heart);
-            discount = (TextView) view.findViewById(R.id.txt_discou);
-            price = (TextView) view.findViewById(R.id.txt_price);
-            descText1 = (TextView) view.findViewById(R.id.txt_title1);
-            descText2 = (TextView) view.findViewById(R.id.txt_title2);
-            descText3 = (TextView) view.findViewById(R.id.txt_title3);
+            discount =  view.findViewById(R.id.txt_discou);
+            price =  view.findViewById(R.id.txt_price);
+            descText1 =  view.findViewById(R.id.txt_title1);
+            descText2 =  view.findViewById(R.id.txt_title2);
+            descText3 =  view.findViewById(R.id.txt_title3);
 
             imageView_heart.bringToFront();
 

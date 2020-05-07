@@ -14,8 +14,14 @@ public class OptionDefaultResponse {
     @SerializedName("isSuccess")
     private boolean isSuccess;
 
+
+
     public OptionResult[] getResult() {
         return result;
+    }
+
+    public OptionResult getResult(int i) {
+        return result[i];
     }
 
     public void setResult(OptionResult[] result) {

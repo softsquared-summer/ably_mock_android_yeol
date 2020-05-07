@@ -27,12 +27,12 @@ class OptionService {
             public void onResponse(Call<OptionDefaultResponse> call, Response<OptionDefaultResponse> response) {
                 final OptionDefaultResponse defaultResponse = response.body();
                 if (defaultResponse == null) {
-                    mMainActivityView.validateFailure(null);
+                    mMainActivityView.validateFailureOptionInformation(null);
                     return;
                 }
                 Log.d("request",""+defaultResponse.getCode()+"성공했습니다.");
                 if(defaultResponse.getCode()==100){
-                    mMainActivityView.validateSuccess(null);
+                    mMainActivityView.validateSuccessOptionInformation(defaultResponse);
                 }
                 else{
 
@@ -42,7 +42,7 @@ class OptionService {
 
             @Override
             public void onFailure(Call<OptionDefaultResponse> call, Throwable t) {
-                mMainActivityView.validateFailure(null);
+                mMainActivityView.validateFailureOptionInformation(null);
                 Log.d("request","실패했습니다.");
             }
         });

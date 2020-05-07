@@ -67,15 +67,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txt_discou"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:fontFamily="@font/noto_sans_bold"
                 android:text="10%"
-                android:textColor="@color/pink20" />
+                android:textColor="@color/pink20"
+                android:textSize="18sp" />
 
             <TextView
 
@@ -85,12 +88,10 @@
 
                 android:layout_height="wrap_content"
 
-                android:layout_marginLeft="10dp"
-
                 android:fontFamily="@font/noto_sans_bold"
                 android:text="28,800"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -105,17 +106,19 @@
 
             android:layout_marginTop="10dp"
 
-            android:text="titl1"
+            android:fontFamily="@font/noto_sans_bold"
+            android:text="크림치즈마켓"
             android:textColor="@color/gray60"
-            android:textSize="14dp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/txt_title2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="TextView"
-            android:textColor="@color/gray50" />
+            android:text="봄에 찰떡 컬러감 클린 슬림핏"
+            android:textColor="@color/black_40"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/txt_title3"
@@ -123,7 +126,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="938개 구매중"
-            android:textColor="@color/gray50" />
+            android:textColor="@color/black_40"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

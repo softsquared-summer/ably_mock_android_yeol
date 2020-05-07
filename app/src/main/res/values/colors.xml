@@ -183,4 +183,7 @@
     <color name="whiteop15">#26ffffff</color>
     <color name="whiteop40">#66ffffff</color>
     <color name="whiteop80">#ccffffff</color>
+    <color name="cursorColor">#ffb65d</color>
+    <color name="nomalColor">#ffcd54</color>
+
 </resources>
